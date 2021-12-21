@@ -1,4 +1,4 @@
-![preview](https://i.imgur.com/Ss0skBZ.png)
+![preview](https://i.imgur.com/jAh88nu.png)
 # Kef Control Interface
 [![license](https://img.shields.io/github/license/proflylab/kef-control)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
 ![issues](https://img.shields.io/github/issues/proflylab/youtube-stats)
