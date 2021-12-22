@@ -29,6 +29,9 @@ npm run electron:build
 npm run lint
 ```
 
+## Tested
+- Windows 10 x64
+
 ## Author
 [Proflylab](https://github.com/proflylab)
 
