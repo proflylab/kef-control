@@ -1,5 +1,5 @@
 ![preview](https://i.imgur.com/jAh88nu.png)
-# Kef Control Interface
+# Kef Control (LSX)
 [![license](https://img.shields.io/github/license/proflylab/kef-control)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
 ![issues](https://img.shields.io/github/issues/proflylab/youtube-stats)
 ![version](https://img.shields.io/github/package-json/v/proflylab/youtube-stats)
