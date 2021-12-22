@@ -1,4 +1,4 @@
-![preview](https://i.imgur.com/jAh88nu.png)
+![preview](https://i.imgur.com/l6gzuKR.png)
 # Kef Control (LSX)
 [![license](https://img.shields.io/github/license/proflylab/kef-control)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
 ![issues](https://img.shields.io/github/issues/proflylab/kef-control)
@@ -8,6 +8,7 @@
 Work in progress
 ## Features
 - Mute and unmute (WIP)
+- Save and load config from .json (WIP)
 - Get and set volume
 - Get and set source input
 - Turn speaker on and off
