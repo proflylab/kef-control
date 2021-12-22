@@ -11,6 +11,11 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
+  "author": {
+    "name": "Proflylab",
+    "email": "proflylab@pm.me",
+    "url": "https://github.com/proflylab"
+  },
   "main": "background.js",
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",

@@ -1,11 +1,13 @@
 ![preview](https://i.imgur.com/l6gzuKR.png)
-# Kef Control (LSX)
+# Kef Control (LSX) [release](https://github.com/proflylab/kef-control/releases)
 [![license](https://img.shields.io/github/license/proflylab/kef-control)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
 ![issues](https://img.shields.io/github/issues/proflylab/kef-control)
 ![version](https://img.shields.io/github/package-json/v/proflylab/kef-control)
 ![last commit](https://img.shields.io/github/last-commit/proflylab/kef-control)
 
 Work in progress
+
+
 ## Features
 - Mute and unmute (WIP)
 - Save and load config from .json (WIP)
