@@ -271,7 +271,7 @@ export default defineComponent({
     buildTray() {
       if (!this.tray) {
         // eslint-disable-next-line no-undef
-        this.tray = new Tray(join(__static, 'tray-icon.png'))
+        this.tray = new Tray(join(__static, 'icon.png'))
         this.tray.on('click', () => ipcRenderer.send('show-tray'))
       }
       this.tray.setToolTip('KEF Control')

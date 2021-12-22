@@ -4,6 +4,7 @@ import { BrowserWindow, app, ipcMain, protocol } from 'electron'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
+import { join } from 'path'
 import { socket } from './scripts'
 
 require('@electron/remote/main').initialize()
@@ -17,12 +18,15 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
+    title: 'KEF Control (LSX)',
+    // eslint-disable-next-line no-undef
+    icon: join(__static, 'icon.png'),
     width: 500,
     height: 250,
     frame: false,
     minimizable: true,
     fullscreenable: false,
-    resizable: true,
+    resizable: false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
