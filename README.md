@@ -1,5 +1,5 @@
 ![preview](https://i.imgur.com/l6gzuKR.png)
-# Kef Control (LSX) [release](https://github.com/proflylab/kef-control/releases)
+# KEF Control (LSX) [release](https://github.com/proflylab/kef-control/releases)
 [![license](https://img.shields.io/github/license/proflylab/kef-control)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
 ![issues](https://img.shields.io/github/issues/proflylab/kef-control)
 ![version](https://img.shields.io/github/package-json/v/proflylab/kef-control)
