@@ -223,21 +223,20 @@ export default defineComponent({
       )
       menu.append(
         new MenuItem({
-          label: 'Mute'
-          // click: () => this.togglePlaying()
+          label: 'Mute (WIP)',
+          enabled: false
         })
       )
       menu.append(
         new MenuItem({
-          label: 'Unmute'
-          // click: () => this.togglePlaying()
+          label: 'Unmute (WIP)',
+          enabled: false
         })
       )
       menu.append(
         new MenuItem({
           label: `Volume ${this.value.volume}%`,
           enabled: false
-          // click: () => this.togglePlaying()
         })
       )
       menu.append(
