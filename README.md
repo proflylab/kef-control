@@ -33,6 +33,7 @@ npm run lint
 
 ## Tested
 - Windows 10 x64
+- macOS Monterey 12.1
 
 ## Author
 [Proflylab](https://github.com/proflylab)
