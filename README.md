@@ -5,9 +5,6 @@
 ![version](https://img.shields.io/github/package-json/v/proflylab/kef-control)
 ![last commit](https://img.shields.io/github/last-commit/proflylab/kef-control)
 
-Work in progress
-
-
 ## Features
 - Mute and unmute (WIP)
 - Save and load config from .json (WIP)
