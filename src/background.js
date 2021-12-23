@@ -77,7 +77,9 @@ async function createWindow() {
     win.focus()
   })
 
-  ipcMain.on('hide-tray', () => win.hide())
+  ipcMain.on('hide-tray', () =>
+    process.platform !== 'darwin' ? win.hide() : app.quit()
+  )
 
   ipcMain.on('connect', (event, ...args) => {
     socket.client
