@@ -1,9 +1,9 @@
 ![preview](https://i.imgur.com/l6gzuKR.png)
 # KEF Control (LSX) [release](https://github.com/proflylab/kef-control/releases)
-[![license](https://img.shields.io/github/license/proflylab/kef-control?style=for-the-badge)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
-![issues](https://img.shields.io/github/issues/proflylab/kef-control?style=for-the-badge)
-![version](https://img.shields.io/github/package-json/v/proflylab/kef-control?style=for-the-badge)
-![last commit](https://img.shields.io/github/last-commit/proflylab/kef-control?style=for-the-badge)
+[![license](https://img.shields.io/github/license/proflylab/kef-control?style=flat-square)](https://github.com/proflylab/kef-control/blob/master/LICENSE)
+![issues](https://img.shields.io/github/issues/proflylab/kef-control?style=flat-square)
+![version](https://img.shields.io/github/package-json/v/proflylab/kef-control?style=flat-square)
+![last commit](https://img.shields.io/github/last-commit/proflylab/kef-control?style=flat-square)
 
 ## Features
 - Mute and unmute (WIP)
