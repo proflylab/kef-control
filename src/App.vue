@@ -141,8 +141,8 @@ export default defineComponent({
       source: ref({
         Wifi: 'Wifi Mode',
         Bluetooth: 'Bluetooth Mode',
-        Aux: 'Playback control is not supported in AUX Mode',
-        Opt: 'Playback control is not supported in OPT Mode',
+        Aux: 'AUX Mode',
+        Opt: 'OPT Mode',
         Usb: 'USB Mode',
         TurnOff: 'The speaker is Standby Mode Press a source to power on'
       }),
@@ -248,7 +248,7 @@ export default defineComponent({
         new MenuItem({
           label:
             this.currentSource !== null
-              ? `Source ${this.currentSource}`
+              ? `Mode ${this.currentSource}`
               : 'Offline',
           enabled: false
         })
