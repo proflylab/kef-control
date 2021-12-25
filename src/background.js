@@ -1,6 +1,6 @@
 'use strict'
 
-import { BrowserWindow, app, ipcMain, protocol } from 'electron'
+import { BrowserWindow, app, ipcMain, protocol, dialog } from 'electron'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
@@ -12,9 +12,8 @@ initialize()
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
-let window = null
-const gotTheLock = app.requestSingleInstanceLock()
-
+const singleInstanceLock = app.requestSingleInstanceLock()
+if (!singleInstanceLock) app.quit()
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
@@ -70,28 +69,27 @@ async function createWindow() {
     }
   })
 
+  socket.client.on('error', (e) => {
+    dialog.showErrorBox('Error', e.message)
+    win.webContents.send('connected', false)
+  })
+
   socket.client.on('close', () => {})
 
   ipcMain.on('show-tray', () => {
-    win.show()
-    win.focus()
+    process.platform === 'darwin' ? app.show() : win.show()
   })
 
   ipcMain.on('hide-tray', () =>
-    process.platform !== 'darwin' ? win.hide() : app.quit()
+    process.platform === 'darwin' ? app.hide() : win.hide()
   )
 
   ipcMain.on('connect', (event, ...args) => {
-    socket.client
-      .connect(+args[1], args[0], () => {
-        event.sender.send('connected', true)
-        socket.client.write(socket.msg.getSource)
-        socket.client.write(socket.msg.getVolume)
-      })
-      .on('error', (e) => {
-        event.sender.send('connected', false)
-        console.error(e.message)
-      })
+    socket.client.connect(+args[1], args[0], () => {
+      event.sender.send('connected', true)
+      socket.client.write(socket.msg.getSource)
+      socket.client.write(socket.msg.getVolume)
+    })
   })
 
   ipcMain.on('disconnect', (event) => {
@@ -131,32 +129,20 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
 
-if (!gotTheLock) {
-  app.quit()
-} else {
-  app.on('second-instance', () => {
-    // Someone tried to run a second instance, we should focus our window.
-    if (window) {
-      if (window.isMinimized()) window.restore()
-      window.focus()
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', async () => {
+  if (isDevelopment && !process.env.IS_TEST) {
+    // Install Vue Devtools
+    try {
+      await installExtension(VUEJS3_DEVTOOLS)
+    } catch (e) {
+      console.error('Vue Devtools failed to install:', e.toString())
     }
-  })
-
-  // This method will be called when Electron has finished
-  // initialization and is ready to create browser windows.
-  // Some APIs can only be used after this event occurs.
-  app.on('ready', async () => {
-    if (isDevelopment && !process.env.IS_TEST) {
-      // Install Vue Devtools
-      try {
-        await installExtension(VUEJS3_DEVTOOLS)
-      } catch (e) {
-        console.error('Vue Devtools failed to install:', e.toString())
-      }
-    }
-    createWindow()
-  })
-}
+  }
+  createWindow()
+})
 
 // Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {
